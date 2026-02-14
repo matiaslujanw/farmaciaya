@@ -28,9 +28,9 @@ export function PharmacySelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="hidden md:flex gap-2 bg-transparent">
+        <Button variant="outline" size="sm" className="flex gap-2 bg-transparent">
           <MapPin className="h-4 w-4" />
-          <span className="max-w-[150px] truncate">
+          <span className="hidden md:inline max-w-[150px] truncate">
             {selectedPharmacy ? selectedPharmacy.pharmacyName : 'Elegir farmacia'}
           </span>
         </Button>
