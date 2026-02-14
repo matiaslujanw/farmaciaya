@@ -40,7 +40,7 @@ export function AssistantWidget() {
 
       {/* Floating Chat */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 z-50 w-[380px] h-[600px] shadow-2xl flex flex-col">
+        <Card className="fixed inset-0 z-50 flex flex-col shadow-2xl md:inset-auto md:bottom-6 md:right-6 md:h-[600px] md:w-[380px] md:rounded-xl">
           <div className="flex items-center justify-between border-b p-4 bg-primary text-primary-foreground">
             <div className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
