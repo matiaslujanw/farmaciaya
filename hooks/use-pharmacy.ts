@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocalStorage } from './use-local-storage'
+import { useSessionStorage } from './use-session-storage'
 
 export interface PharmacySelection {
   pharmacyId: string
@@ -8,7 +8,7 @@ export interface PharmacySelection {
 }
 
 export function usePharmacy() {
-  const [selected, setSelected] = useLocalStorage<PharmacySelection | null>(
+  const [selected, setSelected] = useSessionStorage<PharmacySelection | null>(
     'farmaciaya-pharmacy',
     null
   )

@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { useLocalStorage } from '@/hooks/use-local-storage'
+import { useSessionStorage } from '@/hooks/use-session-storage'
 import { useGeolocation, calculateDistance } from '@/hooks/use-geolocation'
 import { usePharmacy } from '@/hooks/use-pharmacy'
 import { pharmacies } from '@/data/pharmacies'
@@ -23,7 +23,7 @@ export function OnboardingModal() {
   const [step, setStep] = useState<'phone' | 'location'>('phone')
   const [phone, setPhone] = useState('')
   const [isMounted, setIsMounted] = useState(false)
-  const [onboardingComplete, setOnboardingComplete] = useLocalStorage('farmaciaya-onboarding', false)
+  const [onboardingComplete, setOnboardingComplete] = useSessionStorage('farmaciaya-onboarding', false)
   const { location, requestLocation, loading } = useGeolocation()
   const { selectPharmacy } = usePharmacy()
 
