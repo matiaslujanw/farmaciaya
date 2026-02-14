@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
-import { useLocalStorage } from '@/hooks/use-local-storage'
+import { useSessionStorage } from '@/hooks/use-session-storage'
 import { processUserMessage, getQuickActions, type AssistantMessage } from '@/lib/assistant-service'
 import { cn } from '@/lib/utils'
 
@@ -17,7 +17,7 @@ interface AssistantChatProps {
 }
 
 export function AssistantChat({ compact = false }: AssistantChatProps) {
-  const [messages, setMessages] = useLocalStorage<AssistantMessage[]>('farmaciaya-chat', [
+  const [messages, setMessages] = useSessionStorage<AssistantMessage[]>('farmaciaya-chat', [
     {
       id: '1',
       role: 'assistant',
