@@ -4,6 +4,13 @@ import Link from 'next/link'
 import { ArrowRight, Pill, Search, MapPin, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { OnboardingModal } from '@/components/onboarding-modal'
@@ -17,7 +24,7 @@ import { usePharmacy } from '@/hooks/use-pharmacy'
 export default function HomePage() {
   const { selectedPharmacy } = usePharmacy()
   const featuredProducts = products.filter((p) => p.isAvailable).slice(0, 6)
-  const nearbyPharmacies = pharmacies.filter((p) => p.isOnDuty).slice(0, 3)
+  const nearbyPharmacies = pharmacies.filter((p) => p.isOnDuty)
 
   return (
     <>
@@ -67,25 +74,37 @@ export default function HomePage() {
                     </Link>
                   </Button>
                 </div>
-                <div className="grid gap-4 md:grid-cols-3">
-                  {nearbyPharmacies.map((pharmacy) => (
-                    <Card key={pharmacy.id} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-5 space-y-3">
-                        <div className="flex items-start justify-between">
-                          <h3 className="font-semibold">{pharmacy.name}</h3>
-                          <span className="text-xs bg-green-500 text-white px-2 py-1 rounded-full">
-                            {'Abierta'}
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{pharmacy.address}</p>
-                        <p className="text-sm text-muted-foreground">{pharmacy.neighborhood}</p>
-                        <Button asChild variant="outline" size="sm" className="w-full bg-transparent">
-                          <Link href={`/farmacias/${pharmacy.id}`}>Ver detalles</Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                <Carousel
+                  opts={{
+                    align: 'start',
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4">
+                    {nearbyPharmacies.map((pharmacy) => (
+                      <CarouselItem key={pharmacy.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                        <Card className="hover:shadow-lg transition-shadow h-full">
+                          <CardContent className="p-5 space-y-3">
+                            <div className="flex items-start justify-between">
+                              <h3 className="font-semibold">{pharmacy.name}</h3>
+                              <span className="text-xs bg-green-500 text-white px-2 py-1 rounded-full">
+                                {'Abierta'}
+                              </span>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{pharmacy.address}</p>
+                            <p className="text-sm text-muted-foreground">{pharmacy.neighborhood}</p>
+                            <Button asChild variant="outline" size="sm" className="w-full bg-transparent">
+                              <Link href={`/farmacias/${pharmacy.id}`}>Ver detalles</Link>
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden md:flex" />
+                  <CarouselNext className="hidden md:flex" />
+                </Carousel>
               </div>
             </div>
           </section>

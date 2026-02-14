@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { MessageCircle, X } from 'lucide-react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { AssistantChat } from '@/components/assistant-chat'
@@ -23,9 +24,16 @@ export function AssistantWidget() {
         <Button
           onClick={() => setIsOpen(true)}
           size="lg"
-          className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all"
+          className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all p-0 overflow-hidden"
         >
-          <MessageCircle className="h-6 w-6" />
+          <div className="relative h-full w-full">
+            <Image
+              src="/farmaceutico.jpg"
+              alt="Asistente Virtual"
+              fill
+              className="object-cover"
+            />
+          </div>
           <span className="sr-only">Abrir asistente virtual</span>
         </Button>
       )}
