@@ -106,9 +106,8 @@ export default function FarmaciasPage() {
                 {filteredPharmacies.map((pharmacy) => (
                   <Card
                     key={pharmacy.id}
-                    className={`hover:shadow-lg transition-all ${
-                      selectedPharmacy?.pharmacyId === pharmacy.id ? 'ring-2 ring-primary' : ''
-                    }`}
+                    className={`hover:shadow-lg transition-all ${selectedPharmacy?.pharmacyId === pharmacy.id ? 'ring-2 ring-primary' : ''
+                      }`}
                   >
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
@@ -160,7 +159,7 @@ export default function FarmaciasPage() {
 
                           {'distance' in pharmacy && pharmacy.distance !== undefined && (
                             <p className="text-sm text-muted-foreground">
-                              📍 A {pharmacy.distance.toFixed(1)} km de tu ubicación
+                              📍 A {pharmacy.distance?.toFixed(1)} km de tu ubicación
                             </p>
                           )}
                         </div>
