@@ -273,7 +273,7 @@ export default function CarritoPage() {
                             size="lg"
                             disabled={!selectedPharmacy}
                           >
-                            Finalizar pedido
+                            Consultar pedido
                             <ArrowRight className="h-4 w-4" />
                           </Button>
                           <Button

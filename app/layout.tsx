@@ -5,6 +5,9 @@ import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 import { BackgroundWrapper } from '@/components/background-wrapper'
 
+import { CartProvider } from '@/hooks/use-cart'
+import { PharmacyProvider } from '@/hooks/use-pharmacy'
+
 import './globals.css'
 
 const inter = Inter({
@@ -46,9 +49,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <BackgroundWrapper />
-          {children}
-          <Toaster />
+          <CartProvider>
+            <PharmacyProvider>
+              <BackgroundWrapper />
+              {children}
+              <Toaster />
+            </PharmacyProvider>
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

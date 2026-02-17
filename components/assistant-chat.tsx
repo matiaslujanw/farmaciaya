@@ -51,8 +51,7 @@ export function AssistantChat({ compact = false }: AssistantChatProps) {
     setIsTyping(true)
 
     // Simulate processing time
-    setTimeout(() => {
-      const response = processUserMessage(text)
+    processUserMessage(text).then((response) => {
       const assistantMessage: AssistantMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -61,7 +60,7 @@ export function AssistantChat({ compact = false }: AssistantChatProps) {
       }
       setMessages((prev) => [...prev, assistantMessage])
       setIsTyping(false)
-    }, 800)
+    })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
