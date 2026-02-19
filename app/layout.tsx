@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     description: 'Catálogo digital de productos farmacéuticos y red de farmacias.',
     type: 'website',
   },
+  icons: {
+    icon: '/icono.png',
+  },
 }
 
 export const viewport = {
