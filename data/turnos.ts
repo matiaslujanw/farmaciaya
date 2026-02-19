@@ -8,37 +8,36 @@ export interface TurnoEntry {
 
 // Ejemplo de turnos para el mes actual
 export const turnosData: TurnoEntry[] = [
-  // Enero 2025
-  { date: '2025-01-15', pharmacyIds: ['farmacity-centro', 'farmacity-nueva-cordoba'] },
-  { date: '2025-01-16', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-01-17', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-01-18', pharmacyIds: ['farmacity-nueva-cordoba', 'farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-01-19', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-01-20', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-01-21', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba', 'farmacity-centro'] },
-  { date: '2025-01-22', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-01-23', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-01-24', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-01-25', pharmacyIds: ['farmacity-nueva-cordoba', 'farmacity-centro'] },
-  { date: '2025-01-26', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-01-27', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-01-28', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-01-29', pharmacyIds: ['farmacity-centro', 'farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-01-30', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-01-31', pharmacyIds: ['farmacity-centro'] },
-  
-  // Febrero 2025 - Agregar aquí los turnos del mes siguiente
-  { date: '2025-02-01', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-02-02', pharmacyIds: ['farmacity-centro', 'farmacity-nueva-cordoba'] },
-  { date: '2025-02-03', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-02-04', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-02-05', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-02-06', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-02-07', pharmacyIds: ['farmacity-centro', 'farmacias-del-pueblo-alta-cordoba'] },
-  { date: '2025-02-08', pharmacyIds: ['farmacity-nueva-cordoba'] },
-  { date: '2025-02-09', pharmacyIds: ['farmacity-centro'] },
-  { date: '2025-02-10', pharmacyIds: ['farmacias-del-pueblo-alta-cordoba'] },
-]
+  // Febrero 2026
+  { date: '2026-02-01', pharmacyIds: ['1', '2'] },
+  { date: '2026-02-02', pharmacyIds: ['3', '4'] },
+  { date: '2026-02-03', pharmacyIds: ['5', '6'] },
+  { date: '2026-02-04', pharmacyIds: ['7', '8'] },
+  { date: '2026-02-05', pharmacyIds: ['9', '10'] },
+  { date: '2026-02-06', pharmacyIds: ['11', '12'] },
+  { date: '2026-02-07', pharmacyIds: ['13', '14'] },
+  { date: '2026-02-08', pharmacyIds: ['15', '16'] },
+  { date: '2026-02-09', pharmacyIds: ['17', '18'] },
+  { date: '2026-02-10', pharmacyIds: ['19', '20'] },
+  { date: '2026-02-11', pharmacyIds: ['21', '22'] },
+  { date: '2026-02-12', pharmacyIds: ['1', '2', '21'] },
+  { date: '2026-02-13', pharmacyIds: ['3', '4', '22'] },
+  { date: '2026-02-14', pharmacyIds: ['5', '6'] },
+  { date: '2026-02-15', pharmacyIds: ['7', '8'] },
+  { date: '2026-02-16', pharmacyIds: ['9', '10'] },
+  { date: '2026-02-17', pharmacyIds: ['11', '12'] },
+  { date: '2026-02-18', pharmacyIds: ['13', '14'] },
+  { date: '2026-02-19', pharmacyIds: ['21', '22'] }, // Hoy
+  { date: '2026-02-20', pharmacyIds: ['15', '16', '21'] },
+  { date: '2026-02-21', pharmacyIds: ['17', '18', '22'] },
+  { date: '2026-02-22', pharmacyIds: ['19', '20'] },
+  { date: '2026-02-23', pharmacyIds: ['1', '2'] },
+  { date: '2026-02-24', pharmacyIds: ['3', '4'] },
+  { date: '2026-02-25', pharmacyIds: ['5', '6'] },
+  { date: '2026-02-26', pharmacyIds: ['7', '8'] },
+  { date: '2026-02-27', pharmacyIds: ['9', '10'] },
+  { date: '2026-02-28', pharmacyIds: ['11', '12'] },
+];
 
 // Helper para obtener turnos de hoy
 export function getTurnosHoy(): TurnoEntry | undefined {

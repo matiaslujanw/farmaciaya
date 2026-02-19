@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Search, Filter } from 'lucide-react'
 import { Header } from '@/components/header'
@@ -23,7 +23,7 @@ import { categories } from '@/data/categories'
 
 const ITEMS_PER_PAGE = 24
 
-export default function CatalogoPage() {
+function CatalogoContent() {
   const searchParams = useSearchParams()
   const [search, setSearch] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
@@ -240,5 +240,17 @@ export default function CatalogoPage() {
 
       <Footer />
     </>
+  )
+}
+
+export default function CatalogoPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+      </div>
+    }>
+      <CatalogoContent />
+    </Suspense>
   )
 }
